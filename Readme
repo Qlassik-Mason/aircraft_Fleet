@@ -1,0 +1,60 @@
+VIABLE FLEET SYSTEM 
+This project is a REST API to perform CRUD operations on the fleet I.e Aircraft and Flight.
+
+This Project was  Developed in Go 1.21.6 and gin Rest Framework and Gorm which is an object relational mapping Library.
+postgres was use for the  back-end technology.
+
+
+HOW TO RUN THE APP
+-Prerequisite - Go version 1.21.6 must be installed and properly setup at the environment variable.
+
+-Make sure the following packages are installed : gorm.io/driver/postgres, github.com/gin-gonic/gin, import "gorm.io/gorm.
+
+-Connection to postgres Data base can be found in the initializers folder.
+
+- You can Change data base connection from  the .env file and as well as port number of the server, currently set to port 3000.
+
+- Tableplus was used to connect and view data base table.
+
+- To automatically compile your code at each modification, here is link :https://github.com/githubnemo/CompileDaemon 
+
+ OPERATIONS 
+
+-The API allows to search Flights by departure airport, arrival airport, departure date, and departure time.
+-The search URL are provided as follows. 
+
+-/models/FlightByDepartureAirport/:departure_airport
+
+-/models/FlightByArrivalAirport/:arrival_airport
+
+-/models/FlightByDepartureDate/:departure_date
+
+- /models/FlightByDepartureTime/:departure_time
+
+-/models/FlightByArrivalDate/:arrival_date
+
+-/models/FlightByArrivalTime/:arrival_time 
+
+-/models/ListOfDepartureAirport/:departure_date 
+
+-/models/ListOfInflightAircraft/:departure_date
+
+
+
+
+DOCKERIZATION
+
+-Make sure docker is installed on your system before deploying.
+
+-Enable virtualization  and WSL from your system's Bios if running on windows.
+
+-You can install docker desktop or in a vm and run the application.
+
+-The  docker image can be found in the app folder of the project after built.
+
+-Thanks
+
+
+
+
+
