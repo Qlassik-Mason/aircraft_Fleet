@@ -40,6 +40,7 @@ HOW TO RUN THE APP
 -/models/ListOfInflightAircraft/:departure_date
 
 
+-The urls can be tested with Post Man, install post man desktop if runing on windows. well personally use postman to test Web API's
 
 
 DOCKERIZATION
