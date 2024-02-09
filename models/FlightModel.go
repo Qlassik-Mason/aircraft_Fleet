@@ -4,7 +4,8 @@ package models
 
 type Flight struct {
 	//gorm.Model
-	DepartureAirport string `gorm:"primarykey;size:16"`
+
+	DepartureAirport string
 	DepartureTime    string
 	DepartureDate    string
 	FlightNum        string

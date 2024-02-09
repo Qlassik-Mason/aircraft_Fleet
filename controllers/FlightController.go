@@ -8,15 +8,15 @@ import (
 )
 
 var body struct {
-	departure_airport string `gorm:"primarykey;size:16"`
-	DepartureTime     string
-	DepartureDate     string
-	FlightNum         string
-	ArrivalAirport    string
-	ArrivalDate       string
-	ArrivalTime       string
-	NumberofAircraft  string
-	InFlightAircraft  string
+	DepartureAirport string 
+	DepartureTime    string
+	DepartureDate    string
+	FlightNum        string 
+	ArrivalAirport   string 
+	ArrivalDate      string 
+	ArrivalTime      string 
+	NumberofAircraft string 
+	InFlightAircraft string 
 }
 
 func PostFlightCreate(c *gin.Context) {
@@ -24,9 +24,7 @@ func PostFlightCreate(c *gin.Context) {
 	c.Bind(&body)
 
 	//create  Flight post
-	FlightPost := models.Flight{DepartureAirport: body.departure_airport, DepartureTime: body.DepartureTime, DepartureDate: body.DepartureDate, FlightNum: body.FlightNum,
-		ArrivalAirport: body.ArrivalAirport, ArrivalDate: body.ArrivalDate, ArrivalTime: body.ArrivalTime, NumberofAircraft: body.NumberofAircraft,
-		InFlightAircraft: body.InFlightAircraft}
+	FlightPost := models.Flight{}
 
 	result := initializers.DB.Create(&FlightPost)
 
@@ -163,9 +161,7 @@ func FlightUpdate(c *gin.Context) {
 	//initializers.DB.First(&SingleFlight)
 
 	//Update the value by arrival time
-	initializers.DB.Model(&SingleFlight).Updates(models.Flight{DepartureAirport: body.departure_airport, DepartureTime: body.DepartureTime, DepartureDate: body.DepartureDate, FlightNum: body.FlightNum,
-		ArrivalAirport: body.ArrivalAirport, ArrivalDate: body.ArrivalDate, ArrivalTime: body.ArrivalTime, NumberofAircraft: body.NumberofAircraft,
-		InFlightAircraft: body.InFlightAircraft}).Where("arrival_time = ?", c.Param("arrival_time")).Find(&SingleFlight)
+	initializers.DB.Model(&SingleFlight).Updates(models.Flight{}).Where("arrival_time = ?", c.Param("arrival_time")).Find(&SingleFlight)
 
 	//Respond with
 	c.JSON(200, gin.H{

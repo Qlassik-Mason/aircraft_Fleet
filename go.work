@@ -6,4 +6,5 @@ use (
 	./initializers
 	./migrate
 	./models
+	./app
 )
