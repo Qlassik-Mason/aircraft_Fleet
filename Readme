@@ -40,7 +40,7 @@ HOW TO RUN THE APP
 -/models/ListOfInflightAircraft/:departure_date
 
 
--The urls can be tested with Post Man, install post man desktop if runing on windows. well personally use postman to test Web API's
+-The urls can be tested with Post Man, install post man desktop if runing on windows. well personally i use postman to test Web API's
 
 
 DOCKERIZATION
@@ -51,9 +51,43 @@ DOCKERIZATION
 
 -You can install docker desktop or in a vm and run the application.
 
--The  docker image can be found in the app folder of the project after built.
+-Images folder contains the database table and docker container running on port 3000.
+
+-The docker compose file can also be run if you want to run the app image separately from the database image.
 
 -Thanks
+
+
+
+MORE OPTIONS FOR SECURITY ASPECT OF THE API USING VPN AND LOAD BALANCERS
+
+- Use of Virtual private network (VPN) can help secure your API from various attacks.
+
+-A load balancer is a component that distributes API request traffic across multiple servers, 
+
+-it improves system responsiveness and reduces failures by preventing overloading of individual resources.
+
+-When a request is made to a service (e.g., a website or video) the load balancer receives the request and decides which server will process and respond to it, 
+
+As it adds a  layer of indirection between the client and server, a load balancer can shield the client from a direct connection to the server. 
+
+-This means that a server may change — or be removed from the farm — and the client won't know or be impacted.
+
+-Some load balancers can handle more complex tasks, such as HTTPS offloading. 
+
+-When doing so, the clients have a secure connection to the load balancer over HTTPS, while the load balancer opens an HTTP connection to the backend server.
+
+
+USING API GATEWAY FOR TRAFFIC CONTROL
+
+- Caching and rate limiting are easily the two most common traffic control mechanisms a gateway can apply.
+
+- When caching, the gateway gives the API consumer a faster response, while shielding the backend servers from excessive, repetitive load.
+
+- With rate limiting, the gateway can prevent potential overuse or abuse from consumers by reducing the total number of requests a consumer can issue in a certain period of time.
+
+These are a few points that can help secure an API from various attacks and overloading.
+
 
 
 
