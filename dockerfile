@@ -2,13 +2,11 @@ FROM golang:1.21.6
 
 WORKDIR /app
 
-COPY go.sum .
-COPY go.mod .
-COPY main.go .
-RUN go get
+COPY . .
 RUN go build -o bin .
 
-ENTRYPOINT [ "/app/bin" ]
+
+
 
 
 
